@@ -4,7 +4,7 @@
 #
 # Joseph B. Zambon
 # jbzambon@ncsu.edu
-# 29 October 2019
+# 30 October 2019
 #
 # Using conda, create environment, activate, and run code
 # conda env create -f ncroep.yml 
@@ -91,7 +91,7 @@ for t in range(0,1):
     if np.isnan(raw_sst[min_lat,min_lon]) == 0:
         raw_sst_loc = str(round(raw_sst[min_lat,min_lon],1))
     else:
-        raw_sst_loc = 'NaN '
+        raw_sst_loc = '-- '
     # Raw Chlor-a
     # OPeNDAP linked datasets
     raw_chla = modis_chl_dataset['chlor_a']
@@ -102,7 +102,7 @@ for t in range(0,1):
     if np.isnan(raw_chla[min_lat,min_lon]) == 0:
         raw_chla_loc = str(round(raw_chla[min_lat,min_lon],3))
     else:
-        raw_chla_loc = 'NaN '
+        raw_chla_loc = '-- '
     # DINEOF SST
     # OPeNDAP linked datasets
     dineof_sst = dineof_sst_dataset['sst']
@@ -113,7 +113,7 @@ for t in range(0,1):
     if np.isnan(dineof_sst[min_lat,min_lon]) == 0:
         dineof_sst_loc = str(round(dineof_sst[min_lat,min_lon],1))
     else:
-        dineof_sst_loc = 'NaN '
+        dineof_sst_loc = '-- '
     # Raw SST
     # OPeNDAP linked datasets
     dineof_chla = dineof_chl_dataset['chlor_a']
@@ -124,7 +124,7 @@ for t in range(0,1):
     if np.isnan(dineof_chla[min_lat,min_lon]) == 0:
         dineof_chla_loc = str(round(dineof_chla[min_lat,min_lon],3))
     else:
-        dineof_chla_loc = 'NaN '
+        dineof_chla_loc = '-- '
     plt.clf()
     plt.suptitle('1km Observed and Cloud Free: ' + curr_date.strftime("%d %b %Y %H"+"UTC"),fontsize=36,family='Helvetica')
     # Raw SST
