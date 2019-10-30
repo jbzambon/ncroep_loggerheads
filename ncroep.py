@@ -4,7 +4,7 @@
 #
 # Joseph B. Zambon
 # jbzambon@ncsu.edu
-# 30 October 2019
+# 29 October 2019
 #
 # Using conda, create environment, activate, and run code
 # conda env create -f ncroep.yml 
@@ -62,7 +62,7 @@ meridians = np.arange(180.,360.,2.)
 # For inline plotting in Jupyter Notebook
 #figsize(22,20)
 # For script-based plotting
-fig=plt.figure(frameon=False,figsize=(22,20))
+fig=plt.figure(frameon=True,figsize=(22,20))
 
 #for t in range(0,num_days.days+1):
 for t in range(0,1):
@@ -209,6 +209,6 @@ for t in range(0,1):
     cbar=map.colorbar(location='right',norm=LogNorm(vmin=0.01, vmax=100),                      ticks=[0.01,0.1,1,10,100])
     cbar.ax.tick_params(labelsize=20)
 
-    plt.savefig('ncroep_' + curr_date.strftime("%Y%m%d") + '.png')
+    fig.savefig('ncroep_' + curr_date.strftime("%Y%m%d") + '.png',facecolor='w',format='png',transparent=False)
 
 
